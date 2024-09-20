@@ -1,23 +1,48 @@
 import '../assets/css/style.css'
 import { SquareUserRound } from 'lucide-react';
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 import Logo from '../assets/images/logo.png'
 
  const Navbar = () => {
+  const Navlinks=[
+    {
+      title:"Home",
+      path:"/"
+    },
+    {
+      title:"Projects",
+      path:"/Project"
+    },
+    {
+      title:"Contact",
+      path:"/Contact"
+    }
+  ]
   return (
     <>
         <div className="bg-white shadow-lg w-full h-[10vh] flex drop-shadow-lg shadow-red-400 ">
         <div className="h-[80%] w-1/4 flex justify-center items-start p-4">
-            <img src={Logo} alt="profile" className="rounded-full h-10 w-10 shadow-lg shadow-red-500 border-3 border-white" ></img>
+            <img src={Logo} alt="profile" className="rounded-full h-10 w-10 shadow-lg shadow-red-400 border-3 border-white" ></img>
             
         </div>
           <div className="flex justify-center flex-row w-[10vw] items-center font-bold text-black"> 
             Dakshinya Loganathan
           </div>
-          <div className="w-full flex flex-row justify-end items-center text-black font-semibold ">
+          <div className="w-full flex flex-row justify-end items-center text-black font-semibold px-10">
 
-            <ul className="list-none flex flex-row gap-8">
-              <Link to="/">
+            <ul className="list-none flex flex-row gap-5">
+              {
+                 Navlinks.map((navdata,index)=>(
+                  <NavLink key={index} to={navdata.path}>
+                  <li className="text-black font-semibold">{navdata.title}</li>
+                  </NavLink>))
+                
+
+              }
+              <li ><SquareUserRound size={20} className="rounded-lg"/></li>
+              <li></li>
+               </ul>
+              {/* <Link to="/">
               <li className='active'>Home</li>
               </Link>
              <Link to="/Project">
@@ -27,8 +52,8 @@ import Logo from '../assets/images/logo.png'
              <li className='active'>Contact</li>
              </Link>
               <li ><SquareUserRound size={20}/></li>
-              <li></li>
-            </ul>
+              <li></li> */}
+          
           </div>
 
         </div>
