@@ -7,11 +7,8 @@
     padding: 0;
 }
 
-.active{
-  background-color: #ea1616;
-  padding:10px;
-  border-radius: 5px;
-}
+
+
 .box {
     position: relative;
     width: 350px;
@@ -58,7 +55,7 @@
    
    .box:before,
    .box:after {
-    background: linear-gradient(315deg, #c7a6a6, #ea1616)
+    background: linear-gradient(315deg, #c7a6a6, #b30000)
    }
    
    .box span {
@@ -142,5 +139,25 @@
     color: #fff;
     margin-bottom: 10px;
    }
+   .nav-item {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item:hover {
+    color: #f87171; /* Highlight on hover */
+  }
+  
+  .nav-item.active {
+    color: #f87171; /* Highlight when selected */
+    font-weight: bold;
+  }
+  
+  .custom-font {
+    font-family: 'Poppins', sans-serif; /* Use a different font style */
+    white-space: nowrap; /* Ensure it's displayed in a single line */
+  }
+  
+  
 
    
