@@ -1,6 +1,6 @@
 const mongoose=require('mongoose')
 
-const projectSchema=new mongoose.Schema({
+const userSchema=new mongoose.Schema({
     title:{
         type:String,
         required:true
@@ -15,6 +15,6 @@ adress:{
 }
 })
 
-const Projects=mongoose.model("Projects",projectSchema)
-mongoose.model.export=Projects;
+const User=mongoose.model("User",userSchema)
+module.exports=User;
 

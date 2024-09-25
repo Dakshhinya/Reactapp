@@ -12,5 +12,5 @@ desc:{
 })
 
 const Projects=mongoose.model("Projects",projectSchema)
-mongoose.model.export=Projects;
+module.exports=Projects;
 
